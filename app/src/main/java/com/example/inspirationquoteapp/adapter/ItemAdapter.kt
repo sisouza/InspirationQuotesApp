@@ -11,36 +11,28 @@ import com.example.inspirationquoteapp.model.Affirmation
 
 
 /**
- *
- * Adapts the data
- * will adapt an Affirmation object instance(returned by loadAffirmations)
- *
- * and turns it into a list item view
+ * Adapts Affirmation object instance(returned by loadAffirmations)
+ *and turns it into a list item view
  * So that it can be displayed in the RecyclerView
- *
  * **/
+
 class ItemAdapter(private val context: Context, private val dataset: List<Affirmation>) :
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    /** ItemAdapter needs information on how to resolve the string resources
-     *  This, and other information about the app, is stored in a Context object instance
-     *  that can be passed into an ItemAdapter instance
-     * **/
+
 
     /**
-     * RecyclerView doesn't interact directly with item views, but deals with ViewHolders instead.
      * A ViewHolder represents a single list item view in RecyclerView, and can be reused when possible
-     *
-     *  A ViewHolder instance holds references to the individual views within a list item layout
+     * and references to the individual views within a list item layout
      * **/
 
-    //ItemViewHolder is a subclass of RecyclerView.ViewHolder the view parameter is passed into the superclass constructor.
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.tvItemtitle)
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+
         //create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false)
@@ -50,11 +42,7 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
     }
 
     /**
-     * Method called by the layout manager in order to replace the contents of a list item view
-     *
-     * params:
-     * ItemViewHolder: previously created by the onCreateViewHolder() method
-     * Int: current item position in the list.
+     * Replaces the contents of a list item view
      * **/
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
@@ -66,8 +54,7 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
 
 
     /**
-     *  return the size of dataset.
-     *  app's data is in the dataset property passed into the ItemAdapter constructor (List<Affirmation>)
+     *  return the size of dataset(List<Affirmation>)
      * **/
     override fun getItemCount(): Int {
         return dataset.size
