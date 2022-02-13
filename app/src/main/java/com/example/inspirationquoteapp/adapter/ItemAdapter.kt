@@ -2,6 +2,7 @@ package com.example.inspirationquoteapp.adapter
 
 import android.content.Context
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.inspirationquoteapp.R
@@ -17,7 +18,8 @@ import com.example.inspirationquoteapp.model.Affirmation
  * So that it can be displayed in the RecyclerView
  *
  * **/
-class ItemAdapter(private val context: Context, private val dataset: List<Affirmation>) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
+class ItemAdapter(private val context: Context, private val dataset: List<Affirmation>) :
+    RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     /** ItemAdapter needs information on how to resolve the string resources
      *  This, and other information about the app, is stored in a Context object instance
@@ -36,4 +38,16 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
         val textView: TextView = view.findViewById(R.id.tvItemtitle)
     }
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        TODO("Not yet implemented")
     }
+
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getItemCount(): Int {
+        TODO("Not yet implemented")
+    }
+
+}
