@@ -49,8 +49,19 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
         return ItemViewHolder(adapterLayout)
     }
 
+    /**
+     * Method called by the layout manager in order to replace the contents of a list item view
+     *
+     * params:
+     * ItemViewHolder: previously created by the onCreateViewHolder() method
+     * Int: current item position in the list.
+     * **/
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = dataset[position]
+
+        //update all the views referenced by the view holder to reflect the correct data for this item (affirmation string)
+        holder.textView.text = context.resources.getString(item.stringResourceId)
+
     }
 
 
