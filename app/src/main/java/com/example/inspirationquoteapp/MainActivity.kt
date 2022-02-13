@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.RecyclerView
+import com.example.inspirationquoteapp.adapter.ItemAdapter
 import com.example.inspirationquoteapp.data.Datasource
 import com.example.inspirationquoteapp.databinding.ActivityMainBinding
 
@@ -24,7 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.rvWordsList)
 
-
+        recyclerView.adapter = ItemAdapter(this, myDataset)
+        recyclerView.setHasFixedSize(true)
 
 
     }
