@@ -40,23 +40,9 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
     }
 
 
-    /**
-     *  called by the layout manager to create new view holders for the RecyclerView
-     *  (when there are no existing view holders that can be reused).
-     *
-     * params:
-     * parent:  the view group that the new list item view will be attached to (RecyclerView)
-     * viewType:  when there are multiple item view types in the same RecyclerView
-     * **/
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        /**
-         *  obtains an instance of LayoutInflater from the provided context (context of the parent).
-         *  The layout inflater knows how to inflate an XML layout into a hierarchy of view objects.
-         * **/
+        //create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
-
-            // method call to inflate the actual list item view
-            //So adapterLayout holds a reference to the list item view
             .inflate(R.layout.list_item, parent, false)
 
         //returns a new ItemViewHolder instance where the root view is adapterLayout.
