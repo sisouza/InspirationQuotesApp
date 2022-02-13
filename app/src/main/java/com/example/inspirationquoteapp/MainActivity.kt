@@ -1,4 +1,5 @@
 package com.example.inspirationquoteapp
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
@@ -16,7 +17,5 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val textView = binding.tvAffirmationsSize
-        textView.text = Datasource().loadAffirmations().size.toString()
     }
 }
