@@ -17,7 +17,7 @@ import com.example.inspirationquoteapp.model.Affirmation
  * So that it can be displayed in the RecyclerView
  *
  * **/
-class ItemAdapter(private val context: Context, private val dataset: List<Affirmation>) {
+class ItemAdapter(private val context: Context, private val dataset: List<Affirmation>) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
 
     /** ItemAdapter needs information on how to resolve the string resources
      *  This, and other information about the app, is stored in a Context object instance
