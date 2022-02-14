@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.inspirationquoteapp.R
@@ -20,7 +21,6 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
     RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
 
-
     /**
      * A ViewHolder represents a single list item view in RecyclerView, and can be reused when possible
      * and references to the individual views within a list item layout
@@ -28,6 +28,7 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.tvItemtitle)
+        val imageView: ImageView = view.findViewById(R.id.ivItemImage)
     }
 
 
@@ -47,8 +48,9 @@ class ItemAdapter(private val context: Context, private val dataset: List<Affirm
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
-        //update all the views referenced by the view holder to reflect the correct data for this item (affirmation string)
+        //update all the views referenced by the view holder to reflect the correct data for this item (affirmation string and image)
         holder.textView.text = context.resources.getString(item.stringResourceId)
+        holder.imageView.setImageResource(item.imageResourceId)
 
     }
 
